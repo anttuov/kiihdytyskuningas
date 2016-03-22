@@ -26,12 +26,24 @@ namespace Kiihdytyskuningas
         {
 
             this.InitializeComponent();
-            List<Motor> motors = new List<Motor>();
-            motors.Add(new Motor { price = 10, rpm = 3000, power = 100, weight = 500, name = "Melko huono DX" });
-            motors.Add(new Motor { price = 100, rpm = 5000, power = 300, weight = 500, name = "TäysShitti Sport" });
-            motors.Add(new Motor { price = 1000, rpm = 9001, power = 800, weight = 550, name = "Nyt PäriZee" });
-            MotorListBox.ItemsSource = motors;
 
+
+
+        }
+
+        private void motorbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Motorpage));
+        }
+
+        private void gearbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Gearpage));
+        }
+
+        private void wheelbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Wheelpage));
         }
     }
 }
