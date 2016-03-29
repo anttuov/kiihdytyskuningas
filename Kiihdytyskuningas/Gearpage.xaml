@@ -5,11 +5,34 @@
     xmlns:local="using:Kiihdytyskuningas"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Kiihdytyskuningas"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="426,51,0,0" TextWrapping="Wrap" Text="Gearboxes" VerticalAlignment="Top"/>
+        <ListView Margin="10" Name="GearboxListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:Gearbox">
+                    <StackPanel>
+                        <TextBlock FontSize="20" FontWeight="Bold" >
+                            <Run Text="Name: "/>
+                            <Run Text="{x:Bind name}"/>
+                        </TextBlock>
+                        <TextBlock FontSize="20" FontWeight="Bold" >
+                            <Run Text="Price: "/>
+                            <Run Text="{x:Bind price}"/>
+                        </TextBlock>
+                        <TextBlock FontSize="20" FontWeight="Bold" >
+                            <Run Text="Gears: "/>
+                            <Run Text="{x:Bind gears}"/>
+                        </TextBlock>
+
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button x:Name="backbutton" Content="BACK" HorizontalAlignment="Left" Margin="1111,661,0,0" VerticalAlignment="Top" Click="backbutton_Click"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="89,661,0,0" TextWrapping="Wrap" Text="Selected: " VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

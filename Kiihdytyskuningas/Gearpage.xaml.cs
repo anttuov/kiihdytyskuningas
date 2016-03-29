@@ -25,6 +25,12 @@ namespace Kiihdytyskuningas
         public Gearpage()
         {
             this.InitializeComponent();
+            List<Gearbox> gearboxes = new List<Gearbox>();
+            gearboxes.Add(new Gearbox { price = 10, gears = 4,  name = "Nelipeli" });
+            gearboxes.Add(new Gearbox { price = 100, gears = 5, name = "Siis viis" });
+            gearboxes.Add(new Gearbox { price = 500, gears = 6, name = "Laatuvehje" });
+
+            GearboxListBox.ItemsSource = gearboxes;
         }
 
         private void backbutton_Click(object sender, RoutedEventArgs e)
@@ -38,6 +44,12 @@ namespace Kiihdytyskuningas
             {
                 rootFrame.GoBack();
             }
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Gearbox gearbox = (Gearbox)e.ClickedItem;
+            ResultTextBlock.Text = "Selected wheel: " + gearbox.name;
         }
     }
 }

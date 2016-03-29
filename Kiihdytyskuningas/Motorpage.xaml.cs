@@ -44,5 +44,11 @@ namespace Kiihdytyskuningas
                 rootFrame.GoBack();
             }
         }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Motor motor = (Motor)e.ClickedItem;
+            ResultTextBlock.Text = "Selected motor: " + motor.name;
+        }
     }
 }

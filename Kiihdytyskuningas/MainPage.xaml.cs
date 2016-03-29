@@ -27,8 +27,6 @@ namespace Kiihdytyskuningas
 
             this.InitializeComponent();
 
-
-
         }
 
         private void motorbutton_Click(object sender, RoutedEventArgs e)

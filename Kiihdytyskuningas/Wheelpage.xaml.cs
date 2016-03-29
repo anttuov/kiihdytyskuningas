@@ -25,6 +25,12 @@ namespace Kiihdytyskuningas
         public Wheelpage()
         {
             this.InitializeComponent();
+            List<Wheel> wheels = new List<Wheel>();
+            wheels.Add(new Wheel { price = 10, traction = 10, weight = 500, name = "Vanhat kumit" });
+            wheels.Add(new Wheel { price = 440, traction = 30, weight = 600, name = "Pysyy kuival" });
+            wheels.Add(new Wheel { price = 9001, traction = 100, weight = 550, name = "TOPTIER" });
+            WheelListBox.ItemsSource = wheels;
+            ResultTextBlock.Text = "JEEOOOOOE";
         }
 
         private void backbutton_Click(object sender, RoutedEventArgs e)
@@ -38,6 +44,14 @@ namespace Kiihdytyskuningas
             {
                 rootFrame.GoBack();
             }
+        }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            Wheel wheel = (Wheel) e.ClickedItem;
+            ResultTextBlock.Text = "Selected wheel: " + wheel.name;
+
         }
     }
 }

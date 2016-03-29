@@ -9,8 +9,8 @@
     mc:Ignorable="d">
 
     <Grid>
-        <ListBox Margin="10" Name="MotorListBox" Foreground="#FFE82828">
-            <ListBox.ItemTemplate>
+        <ListView Margin="10" Name="MotorListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+            <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Motor">
                     <StackPanel>
                         <TextBlock FontSize="20" FontWeight="Bold" >
@@ -22,6 +22,10 @@
                             <Run Text="{x:Bind price}"/>
                         </TextBlock>
                         <TextBlock FontSize="20" FontWeight="Bold" >
+                            <Run Text="RPM: "/>
+                            <Run Text="{x:Bind rpm}"/>
+                        </TextBlock>
+                        <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Power: "/>
                             <Run Text="{x:Bind power}"/>
                         </TextBlock>
@@ -29,17 +33,12 @@
                             <Run Text="Weight: "/>
                             <Run Text="{x:Bind weight}"/>
                         </TextBlock>
-                        <TextBlock FontSize="20" FontWeight="Bold" >
-                            <Run Text="RPM: "/>
-                            <Run Text="{x:Bind rpm}"/>
-                        </TextBlock>
-
-
                     </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button x:Name="backbutton" Content="BACK" HorizontalAlignment="Left" Margin="1111,661,0,0" VerticalAlignment="Top" Click="backbutton_Click"/>
+        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="89,661,0,0" TextWrapping="Wrap" Text="Selected: " VerticalAlignment="Top"/>
     </Grid>
 
 
