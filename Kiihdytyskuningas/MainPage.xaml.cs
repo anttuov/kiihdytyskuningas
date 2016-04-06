@@ -25,29 +25,26 @@ namespace Kiihdytyskuningas
     public sealed partial class MainPage : Page
     {
         Player player = new Player();
-        Car car = new Car();
+
         
 
         public MainPage()
         {
 
             this.InitializeComponent();
-            player.car = car;
-            playertext.Text = player.ToString();
+            
 
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e.Parameter != "")
-            {
-                player = e.Parameter as Player;
-                playertext.Text = player.ToString();
-            }
+            player = (App.Current as App).player;
+            playertext.Text = player.ToString();
         }
 
         private void motorbutton_Click(object sender, RoutedEventArgs e)
         {
+            (App.Current as App).player = player;
             this.Frame.Navigate(typeof(Motorpage), player);
         }
 

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kiihdytyskuningas
 {
-    class Motor
+    public class Motor : Part
     {
-        public string name;
-        public double price;
+
         public int power;
         public int weight;
     }

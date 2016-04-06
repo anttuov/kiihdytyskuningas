@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <ListView Margin="10" Name="MotorListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+        <ListView Margin="10,10,10,80" Name="MotorListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Motor">
                     <StackPanel>

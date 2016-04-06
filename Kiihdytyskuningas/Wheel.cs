@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Kiihdytyskuningas
 {
-    class Wheel
+    public class Wheel : Part
     {
-        public string name;
-        public double price;
+
         public int weight;
         public int traction;
+
+
     }
 }

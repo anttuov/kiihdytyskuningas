@@ -22,6 +22,8 @@ namespace Kiihdytyskuningas
     /// </summary>
     public sealed partial class Wheelpage : Page
     {
+        Player player;
+        Wheel chosenwheel;
         public Wheelpage()
         {
             this.InitializeComponent();
@@ -35,23 +37,31 @@ namespace Kiihdytyskuningas
 
         private void backbutton_Click(object sender, RoutedEventArgs e)
         {
-            // get root frame (which show pages)
+            (App.Current as App).player = player;
             Frame rootFrame = Window.Current.Content as Frame;
-            // did we get it correctly
             if (rootFrame == null) return;
-            // navigate back if possible
             if (rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            player = (App.Current as App).player;
+        }
+
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            chosenwheel = (Wheel)e.ClickedItem;
+            ResultTextBlock.Text = "Selected wheel: " + chosenwheel.name;
 
-            Wheel wheel = (Wheel) e.ClickedItem;
-            ResultTextBlock.Text = "Selected wheel: " + wheel.name;
+        }
 
+        private void buybutton_Click(object sender, RoutedEventArgs e)
+        {
+            player.SetWheel(chosenwheel);
+            player.money = player.money - chosenwheel.price;
         }
     }
 }

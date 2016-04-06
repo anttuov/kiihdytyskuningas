@@ -22,6 +22,8 @@ namespace Kiihdytyskuningas
     /// </summary>
     public sealed partial class Gearpage : Page
     {
+        Player player;
+        Gearbox chosengearbox;
         public Gearpage()
         {
             this.InitializeComponent();
@@ -35,21 +37,31 @@ namespace Kiihdytyskuningas
 
         private void backbutton_Click(object sender, RoutedEventArgs e)
         {
-            // get root frame (which show pages)
+            (App.Current as App).player = player;
             Frame rootFrame = Window.Current.Content as Frame;
-            // did we get it correctly
             if (rootFrame == null) return;
-            // navigate back if possible
             if (rootFrame.CanGoBack)
             {
                 rootFrame.GoBack();
             }
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            player = (App.Current as App).player;
+        }
+
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Gearbox gearbox = (Gearbox)e.ClickedItem;
-            ResultTextBlock.Text = "Selected wheel: " + gearbox.name;
+            chosengearbox = (Gearbox)e.ClickedItem;
+            ResultTextBlock.Text = "Selected gearbox: " + chosengearbox.name;
+
+        }
+
+        private void buybutton_Click(object sender, RoutedEventArgs e)
+        {
+            player.SetGearbox(chosengearbox);
+            player.money = player.money - chosengearbox.price;
         }
     }
 }

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Margin="10" Name="GearboxListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+        <ListView Margin="10,10,10,80" Name="GearboxListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Gearbox">
                     <StackPanel>
@@ -33,6 +33,7 @@
         </ListView>
         <Button x:Name="backbutton" Content="BACK" HorizontalAlignment="Left" Margin="1111,661,0,0" VerticalAlignment="Top" Click="backbutton_Click"/>
         <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="89,661,0,0" TextWrapping="Wrap" Text="Selected: " VerticalAlignment="Top"/>
+        <Button x:Name="buybutton" Content="Buy" HorizontalAlignment="Left" Height="37" Margin="522,656,0,0" VerticalAlignment="Top" Width="81" Click="buybutton_Click"/>
 
     </Grid>
 </Page>

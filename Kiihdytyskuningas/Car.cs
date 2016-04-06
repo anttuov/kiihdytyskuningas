@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Kiihdytyskuningas
 {
-    class Car
+    public class Car : Part
     {
-        public string name;
-        public double price;
+
         public int weight;
         public string img;
 
-        public Gearbox gearbox;
-        public Motor motor;
-        public Wheel wheel;
+        public Gearbox gearbox = new Gearbox();
+        public Motor motor = new Motor();
+        public Wheel wheel = new Wheel();
+
 
     }
 }

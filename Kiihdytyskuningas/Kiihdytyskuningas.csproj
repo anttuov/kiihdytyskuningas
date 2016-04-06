@@ -110,6 +110,7 @@
     <Compile Include="Motorpage.xaml.cs">
       <DependentUpon>Motorpage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Part.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wheel.cs" />
