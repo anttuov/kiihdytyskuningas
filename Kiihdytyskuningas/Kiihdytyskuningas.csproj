@@ -98,6 +98,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Car.cs" />
     <Compile Include="Gearbox.cs" />
     <Compile Include="Gearpage.xaml.cs">
       <DependentUpon>Gearpage.xaml</DependentUpon>
@@ -109,6 +110,7 @@
     <Compile Include="Motorpage.xaml.cs">
       <DependentUpon>Motorpage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wheel.cs" />
     <Compile Include="Wheelpage.xaml.cs">

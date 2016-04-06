@@ -20,18 +20,35 @@ namespace Kiihdytyskuningas
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+    /// 
+    
     public sealed partial class MainPage : Page
     {
+        Player player = new Player();
+        Car car = new Car();
+        
+
         public MainPage()
         {
 
             this.InitializeComponent();
+            player.car = car;
+            playertext.Text = player.ToString();
 
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != "")
+            {
+                player = e.Parameter as Player;
+                playertext.Text = player.ToString();
+            }
         }
 
         private void motorbutton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Motorpage));
+            this.Frame.Navigate(typeof(Motorpage), player);
         }
 
         private void gearbutton_Click(object sender, RoutedEventArgs e)

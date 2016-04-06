@@ -12,6 +12,5 @@ namespace Kiihdytyskuningas
         public double price;
         public int power;
         public int weight;
-        public int rpm;
     }
 }
