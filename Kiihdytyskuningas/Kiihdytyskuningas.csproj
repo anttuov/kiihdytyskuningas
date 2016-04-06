@@ -114,8 +114,8 @@
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wheel.cs" />
-    <Compile Include="Wheelpage.xaml.cs">
-      <DependentUpon>Wheelpage.xaml</DependentUpon>
+    <Compile Include="Wheelspage.xaml.cs">
+      <DependentUpon>Wheelspage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +151,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Wheelpage.xaml">
+    <Page Include="Wheelspage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

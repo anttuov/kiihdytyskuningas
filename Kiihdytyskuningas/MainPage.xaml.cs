@@ -55,7 +55,7 @@ namespace Kiihdytyskuningas
 
         private void wheelbutton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Wheelpage));
+            this.Frame.Navigate(typeof(Wheelspage));
         }
     }
 }
