@@ -99,6 +99,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Car.cs" />
+    <Compile Include="Carpage.xaml.cs">
+      <DependentUpon>Carpage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gearbox.cs" />
     <Compile Include="Gearpage.xaml.cs">
       <DependentUpon>Gearpage.xaml</DependentUpon>
@@ -125,6 +128,14 @@
     <None Include="Kiihdytyskuningas_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\audi80.png" />
+    <Content Include="Assets\datsun100a.png" />
+    <Content Include="Assets\e34.png" />
+    <Content Include="Assets\e36.png" />
+    <Content Include="Assets\hachiroku.png" />
+    <Content Include="Assets\omega3000.png" />
+    <Content Include="Assets\taunus.png" />
+    <Content Include="Assets\w124.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -139,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Carpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Gearpage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

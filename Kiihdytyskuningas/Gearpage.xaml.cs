@@ -28,9 +28,13 @@ namespace Kiihdytyskuningas
         {
             this.InitializeComponent();
             List<Gearbox> gearboxes = new List<Gearbox>();
-            gearboxes.Add(new Gearbox { price = 10, gears = 4,  name = "Nelipeli" });
-            gearboxes.Add(new Gearbox { price = 100, gears = 5, name = "Siis viis" });
-            gearboxes.Add(new Gearbox { price = 500, gears = 6, name = "Laatuvehje" });
+            gearboxes.Add(new Gearbox { price = 0, gears = 1, name = "Shimano" });
+            gearboxes.Add(new Gearbox { price = 150, gears = 2, name = "GM Powerglide" });
+            gearboxes.Add(new Gearbox { price = 250, gears = 3, name = "Mopar 727" });
+            gearboxes.Add(new Gearbox { price = 550, gears = 4, name = "Toyota G40" });
+            gearboxes.Add(new Gearbox { price = 800, gears = 5, name = "Getrag 240" });
+            gearboxes.Add(new Gearbox { price = 1500, gears = 6, name = "Toyota V160" });
+            gearboxes.Add(new Gearbox { price = 4000, gears = 8, name = "Jortsun serkun Imprezasta nyysitty Sekventaali-ihme" });
 
             GearboxListBox.ItemsSource = gearboxes;
         }
@@ -60,7 +64,7 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            player.SetGearbox(chosengearbox);
+            player.car.SetGearbox(chosengearbox);
             player.money = player.money - chosengearbox.price;
         }
     }

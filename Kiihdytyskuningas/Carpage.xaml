@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Kiihdytyskuningas.Wheelspage"
+    x:Class="Kiihdytyskuningas.Carpage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Kiihdytyskuningas"
@@ -9,22 +9,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Margin="10,10,10,76" Name="WheelListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
+        <ListView Margin="10,10,10,76" Name="CarListBox" Foreground="#FFE82828" ItemClick="ListView_ItemClick" IsItemClickEnabled="True">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="data:Wheel">
-                    <StackPanel>
+                <DataTemplate x:DataType="data:Car">
+                    
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{x:Bind img}" Width="128" Height="45" />
                         <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Name: "/>
                             <Run Text="{x:Bind name}"/>
                         </TextBlock>
                         <TextBlock FontSize="20" FontWeight="Bold" >
-                            <Run Text="Price: "/>
+                            <Run Text=" | Price: "/>
                             <Run Text="{x:Bind price}"/>
                         </TextBlock>
                         <TextBlock FontSize="20" FontWeight="Bold" >
-                            <Run Text="Gears: "/>
-                            <Run Text="{x:Bind traction}"/>
+                            <Run Text=" | Weight: "/>
+                            <Run Text="{x:Bind weight}"/>
                         </TextBlock>
+                        <Image Source="{x:Bind img}" Width="128" Height="45" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <ScaleTransform ScaleX="-1"/>
+                            </Image.RenderTransform>
+                        </Image>
 
 
                     </StackPanel>

@@ -9,22 +9,7 @@ namespace Kiihdytyskuningas
     public class Player
     {
         public double money = 5000;
-        private Car car = new Car();
-
-        public void SetMotor(Motor motor)
-        {
-            car.motor = motor;
-        }
-
-        public void SetWheel(Wheel wheel)
-        {
-            car.wheel = wheel;
-        }
-
-        public void SetGearbox(Gearbox gearbox)
-        {
-            car.gearbox = gearbox;
-        }
+        public Car car = new Car();
 
         public override string ToString()
         {

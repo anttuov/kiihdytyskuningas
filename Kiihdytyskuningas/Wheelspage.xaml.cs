@@ -28,9 +28,12 @@ namespace Kiihdytyskuningas
         {
             this.InitializeComponent();
             List<Wheel> wheels = new List<Wheel>();
-            wheels.Add(new Wheel { price = 10, traction = 10, weight = 500, name = "Vanhat kumit" });
-            wheels.Add(new Wheel { price = 440, traction = 30, weight = 600, name = "Pysyy kuival" });
-            wheels.Add(new Wheel { price = 9001, traction = 100, weight = 550, name = "TOPTIER" });
+            wheels.Add(new Wheel { price = 0, traction = 10, weight = 10, name = "Speed Hakkapeliitta + Pinnavanteet" });
+            wheels.Add(new Wheel { price = 100, traction = 20, weight = 25, name = "TM -testihäviäjä Goodridet + Teräsvanteet" });
+            wheels.Add(new Wheel { price = 250, traction = 40, weight = 20, name = "LingLong kesäkumet + kromimangelssit" });
+            wheels.Add(new Wheel { price = 400, traction = 60, weight = 15, name = "BF Goodrich Radial T/A + 885 -BBS replikat" });
+            wheels.Add(new Wheel { price = 600, traction = 80, weight = 10, name = "Pirelli matalaprofiilit + Enkeit" });
+            wheels.Add(new Wheel { price = 1000, traction = 100, weight = 5, name = "Kemorasta nyysityt sliksit + BBS hiilikuituvanteet" });
             WheelListBox.ItemsSource = wheels;
             ResultTextBlock.Text = "JEEOOOOOE";
         }
@@ -59,7 +62,7 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            player.SetWheel(chosenwheel);
+            player.car.SetWheel(chosenwheel);
             player.money = player.money - chosenwheel.price;
         }
     }

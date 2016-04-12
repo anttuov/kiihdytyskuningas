@@ -32,13 +32,17 @@ namespace Kiihdytyskuningas
         {
 
             this.InitializeComponent();
-            
+
+
+
+
 
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             player = (App.Current as App).player;
+            
             playertext.Text = player.ToString();
         }
 
@@ -56,6 +60,11 @@ namespace Kiihdytyskuningas
         private void wheelbutton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Wheelspage));
+        }
+
+        private void carbutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Carpage));
         }
     }
 }
