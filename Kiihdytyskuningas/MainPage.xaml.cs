@@ -33,10 +33,6 @@ namespace Kiihdytyskuningas
 
             this.InitializeComponent();
 
-
-
-
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

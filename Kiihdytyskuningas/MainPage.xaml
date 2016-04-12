@@ -10,12 +10,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        <Button x:Name="motorbutton" Content="Engines" HorizontalAlignment="Left" Margin="300,471,0,0" VerticalAlignment="Top" Click="motorbutton_Click"/>
-        <Button x:Name="gearbutton" Content="Gears" HorizontalAlignment="Left" Margin="400,471,0,0" VerticalAlignment="Top" Click="gearbutton_Click"/>
-        <Button x:Name="wheelbutton" Content="Wheels" HorizontalAlignment="Left" Margin="500,471,0,0" VerticalAlignment="Top" Click="wheelbutton_Click"/>
-        <TextBlock x:Name="playertext" HorizontalAlignment="Left" Margin="54,35,0,0" TextWrapping="Wrap" Text="---" VerticalAlignment="Top"/>
-        <Button x:Name="carbutton" Content="Car shop" HorizontalAlignment="Left" Margin="189,471,0,0" VerticalAlignment="Top" Click="carbutton_Click"/>
+        <Image Source="Assets/bg.jpg" Height="720" Width="1280"></Image>
+        <Button x:Name="motorbutton" Content="Engines" HorizontalAlignment="Left" Margin="300,471,0,0" VerticalAlignment="Top" Click="motorbutton_Click" Background="#CCFFFFFF"/>
+        <Button x:Name="gearbutton" Content="Gears" HorizontalAlignment="Left" Margin="400,471,0,0" VerticalAlignment="Top" Click="gearbutton_Click" Background="#CCFFFFFF"/>
+        <Button x:Name="wheelbutton" Content="Wheels" HorizontalAlignment="Left" Margin="500,471,0,0" VerticalAlignment="Top" Click="wheelbutton_Click" Background="#CCFFFFFF"/>
+        <TextBlock x:Name="playertext" HorizontalAlignment="Left" Margin="54,35,0,0" TextWrapping="Wrap" Text="---" VerticalAlignment="Top" FontSize="18.667" Foreground="White"/>
+        <Button x:Name="carbutton" Content="Car shop" HorizontalAlignment="Left" Margin="189,471,0,0" VerticalAlignment="Top" Click="carbutton_Click" Background="#CCFFFFFF"/>
     </Grid>
 
 </Page>
