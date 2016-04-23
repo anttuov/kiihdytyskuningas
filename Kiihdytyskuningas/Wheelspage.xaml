@@ -20,6 +20,7 @@
                         <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Price: "/>
                             <Run Text="{x:Bind price}"/>
+                            <Run Text="€" />
                         </TextBlock>
                         <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Gears: "/>

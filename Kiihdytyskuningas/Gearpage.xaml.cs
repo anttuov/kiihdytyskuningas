@@ -64,7 +64,7 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            player.car.SetGearbox(chosengearbox);
+            player.InstallPart(chosengearbox);
             player.money = player.money - chosengearbox.price;
         }
     }

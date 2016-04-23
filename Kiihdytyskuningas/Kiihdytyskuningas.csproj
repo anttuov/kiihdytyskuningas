@@ -92,31 +92,35 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="ClassDiagram1.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Car.cs" />
+    <Compile Include="Classes\Car.cs" />
     <Compile Include="Carpage.xaml.cs">
       <DependentUpon>Carpage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gearbox.cs" />
+    <Compile Include="Gamepage.xaml.cs">
+      <DependentUpon>Gamepage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Gearbox.cs" />
     <Compile Include="Gearpage.xaml.cs">
       <DependentUpon>Gearpage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Motor.cs" />
+    <Compile Include="Classes\Motor.cs" />
     <Compile Include="Motorpage.xaml.cs">
       <DependentUpon>Motorpage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Part.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Classes\Part.cs" />
+    <Compile Include="Classes\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wheel.cs" />
+    <Compile Include="Classes\Wheel.cs" />
     <Compile Include="Wheelspage.xaml.cs">
       <DependentUpon>Wheelspage.xaml</DependentUpon>
     </Compile>
@@ -136,6 +140,7 @@
     <Content Include="Assets\hachiroku.png" />
     <Content Include="Assets\omega3000.png" />
     <Content Include="Assets\taunus.png" />
+    <Content Include="Assets\tausta.jpg" />
     <Content Include="Assets\w124.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -152,6 +157,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Carpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gamepage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +181,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

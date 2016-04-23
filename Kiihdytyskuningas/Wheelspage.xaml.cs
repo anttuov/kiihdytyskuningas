@@ -62,7 +62,7 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            player.car.SetWheel(chosenwheel);
+            player.InstallPart(chosenwheel);
             player.money = player.money - chosenwheel.price;
         }
     }

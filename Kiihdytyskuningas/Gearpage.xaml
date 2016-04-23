@@ -20,6 +20,7 @@
                         <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Price: "/>
                             <Run Text="{x:Bind price}"/>
+                            <Run Text="€" />
                         </TextBlock>
                         <TextBlock FontSize="20" FontWeight="Bold" >
                             <Run Text="Gears: "/>
@@ -33,7 +34,7 @@
         </ListView>
         <Button x:Name="backbutton" Content="BACK" HorizontalAlignment="Left" Margin="1111,661,0,0" VerticalAlignment="Top" Click="backbutton_Click"/>
         <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="89,661,0,0" TextWrapping="Wrap" Text="Selected: " VerticalAlignment="Top"/>
-        <Button x:Name="buybutton" Content="Buy" HorizontalAlignment="Left" Height="37" Margin="522,656,0,0" VerticalAlignment="Top" Width="81" Click="buybutton_Click"/>
+        <Button x:Name="buybutton" Content="Buy" HorizontalAlignment="Left" Height="37" Margin="619,656,0,0" VerticalAlignment="Top" Width="81" Click="buybutton_Click"/>
 
     </Grid>
 </Page>

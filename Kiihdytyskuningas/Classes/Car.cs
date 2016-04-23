@@ -12,6 +12,10 @@ namespace Kiihdytyskuningas
         public int weight;
         public string img;
 
+        private Gearbox gearbox = new Gearbox();
+        private Motor motor = new Motor();
+        private Wheel wheel = new Wheel();
+
         public void SetMotor(Motor _motor)
         {
             motor = _motor;
@@ -27,9 +31,15 @@ namespace Kiihdytyskuningas
             gearbox = _gearbox;
         }
 
-        public Gearbox gearbox = new Gearbox();
-        public Motor motor = new Motor();
-        public Wheel wheel = new Wheel();
+        public override string ToString()
+        {
+
+            if (name == null) name = "No car!";
+            return "Car: "+name+". Weight: "+weight+"\n-Motor: " + motor.ToString() + "\n-Wheels: " + wheel.ToString() + "\n-Gearbox: " + gearbox.ToString();
+        }
+        
+
+
 
 
     }

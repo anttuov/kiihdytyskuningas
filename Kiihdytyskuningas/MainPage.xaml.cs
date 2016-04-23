@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
@@ -33,13 +35,16 @@ namespace Kiihdytyskuningas
 
             this.InitializeComponent();
 
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             player = (App.Current as App).player;
-            
             playertext.Text = player.ToString();
+            Wheel asd = new Wheel();
+            player.InstallPart(asd);
+
         }
 
         private void motorbutton_Click(object sender, RoutedEventArgs e)
@@ -61,6 +66,11 @@ namespace Kiihdytyskuningas
         private void carbutton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Carpage));
+        }
+
+        private void drivebutton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Gamepage));
         }
     }
 }
