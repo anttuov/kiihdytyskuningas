@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Runtime.Serialization;
 namespace Kiihdytyskuningas
 {
+
     public class Car : Part
     {
 
@@ -15,6 +16,24 @@ namespace Kiihdytyskuningas
         private Gearbox gearbox = new Gearbox();
         private Motor motor = new Motor();
         private Wheel wheel = new Wheel();
+
+        public Gearbox Gearbox
+        {
+            get
+            {
+                return gearbox;
+            }
+            set
+            {
+
+            }
+        }
+
+        public double PowerFunction()
+        {
+            double power = ((motor.power / 300.0) * (wheel.traction / 100.0)) / ((weight+motor.weight+wheel.weight)/1000.0);
+            return power;
+        }
 
         public void SetMotor(Motor _motor)
         {

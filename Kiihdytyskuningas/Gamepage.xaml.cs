@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -23,22 +24,95 @@ namespace Kiihdytyskuningas
     public sealed partial class Gamepage : Page
     {
         private DispatcherTimer timer;
-
+        private DispatcherTimer timercountdown;
+        double speed = 0;
+        double speed2 = 0;
+        double accel;
+        double accel2;
+        public int pos;
+        private int countdown = 3;
+        int gear = 1;
+        double rpms = 0;
+        Player player;
+        double position = 0;
+        double position2 = 0;
         public Gamepage()
         {
             this.InitializeComponent();
-            timer = new DispatcherTimer();
-            timer.Tick += Timer_Tick;
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 1000 / 60); // try 60 fps
-            timer.Start();
+
+            timercountdown = new DispatcherTimer();
+            timercountdown.Tick += Countdown_Tick;
+            timercountdown.Interval = new TimeSpan(0, 0, 0, 1, 0);
+
+            timercountdown.Start();
+
+
+        }
+
+        private void Countdown_Tick(object sender, object e)
+        {
+            countdown = countdown - 1;
+            debugtext.Text = ""+countdown;
+            if(countdown == 0)
+            {
+                timer = new DispatcherTimer();
+                timer.Tick += Timer_Tick;
+                timer.Interval = new TimeSpan(0, 0, 0, 0, 1000 / 60);
+
+                timer.Start();
+                timercountdown.Stop();
+            }
+
         }
 
         private void Timer_Tick(object sender, object e)
         {
-            Thickness margin = new Thickness();
-            margin.Left = background.Margin.Left - 10;
-            background.Margin = margin;
+            if (rpms < 80)
+            { 
+            speed = speed + accel;
+            }
+            speed2 = speed2 + accel2;
+            rpms = rpms+accel*(20/gear);
+            if (gear == player.Car.Gearbox.gears && rpms > 80)
+                rpms = 80;
+            position = position + speed;
+            position2 = position2 + speed2;
+            Canvas.SetLeft(this.background, -position);
+            Canvas.SetLeft(this.carimg2, 40-(position - position2));
+            rpm.Value = rpms;
+            debugtext.Text = "speed: " + speed + " rpms:" + rpms + " gear: " + gear + " position: "+position ;
+            
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            player = (App.Current as App).player;
+            accel = player.Car.PowerFunction();
+            accel2 = accel + 0.005;
+            carimg.Source = new BitmapImage( new Uri("ms-appx:///"+player.Car.img, UriKind.Absolute));
+            carimg2.Source = new BitmapImage(new Uri("ms-appx:///Assets/hachiroku.png", UriKind.Absolute));
+
+
         }
 
+        private void shift_Click(object sender, RoutedEventArgs e)
+        {
+            if(gear < player.Car.Gearbox.gears)
+            { 
+            double shiftvalue = Math.Abs((80 - rpms));
+            if (shiftvalue < 2)
+                accel = accel + 0.02;
+            else if (shiftvalue < 4)
+                accel = accel + 0.01;
+            else
+                accel = accel - 0.01;
+
+            if (accel < 0.01)
+                accel = 0.01;
+
+            rpms = 0;
+            gear = gear + 1;
+            }
+
+        }
     }
 }

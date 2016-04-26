@@ -42,8 +42,7 @@ namespace Kiihdytyskuningas
         {
             player = (App.Current as App).player;
             playertext.Text = player.ToString();
-            Wheel asd = new Wheel();
-            player.InstallPart(asd);
+
 
         }
 

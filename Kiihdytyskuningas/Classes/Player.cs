@@ -17,6 +17,18 @@ namespace Kiihdytyskuningas
 
         private Car car = new Car();
 
+        public Car Car
+        {
+            get
+            {
+                return car;
+            }
+            set
+            {
+
+            }
+        }
+
         public void InstallPart(object part)
         {
             Type type = part.GetType();
@@ -40,6 +52,8 @@ namespace Kiihdytyskuningas
             }
 
         }
+
+
 
         public override string ToString()
         {

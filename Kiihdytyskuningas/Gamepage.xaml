@@ -5,9 +5,20 @@
     xmlns:local="using:Kiihdytyskuningas"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:Kiihdytyskuningas"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image x:Name="background" Source="Assets/tausta.jpg" Height="720" Width="2560"></Image>
+        <Canvas>
+            <Image x:Name="background" Source="Assets/tausta.png" Height="720" Width="7680" Canvas.Left="0" Canvas.Top="0"></Image>
+
+            <Image x:Name="carimg" Width="128" Height="45" Canvas.Left="40" Canvas.Top="500" />
+            <Image x:Name="carimg2" Width="128" Height="45" Canvas.Left="40" Canvas.Top="430" />
+            <ProgressBar x:Name="rpm" Height="50" Canvas.Left="500" Canvas.Top="50" Width="200" Value="0" Foreground="#FFFF4600"/>
+            <ProgressBar x:Name="rpm_Copy" Height="50" Canvas.Left="500" Canvas.Top="50" Width="200" Value="80" Foreground="#7F0CFF02" Background="#7FFF0000"/>
+            <Button x:Name="shift" Content="SHIFT UP" Canvas.Left="957" Canvas.Top="571" Height="139" Width="284" Click="shift_Click" Foreground="#FFDC28CC" FontSize="64" Background="#7F2406E0"/>
+            <TextBlock x:Name="debugtext" Canvas.Left="60" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="170"/>
+
+        </Canvas>
     </Grid>
 </Page>

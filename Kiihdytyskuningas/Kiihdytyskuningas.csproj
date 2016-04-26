@@ -140,7 +140,7 @@
     <Content Include="Assets\hachiroku.png" />
     <Content Include="Assets\omega3000.png" />
     <Content Include="Assets\taunus.png" />
-    <Content Include="Assets\tausta.jpg" />
+    <Content Include="Assets\tausta.png" />
     <Content Include="Assets\w124.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
