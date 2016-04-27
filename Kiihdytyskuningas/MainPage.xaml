@@ -14,7 +14,7 @@
         <Button x:Name="motorbutton" Content="Engines" HorizontalAlignment="Left" Margin="654,461,0,0" VerticalAlignment="Top" Click="motorbutton_Click" Background="#CCFFFFFF" Height="101" Width="166"/>
         <Button x:Name="gearbutton" Content="Gears" HorizontalAlignment="Left" Margin="500,471,0,0" VerticalAlignment="Top" Click="gearbutton_Click" Background="#CCFFFFFF"/>
         <Button x:Name="wheelbutton" Content="Wheels" HorizontalAlignment="Left" Margin="313,638,0,0" VerticalAlignment="Top" Click="wheelbutton_Click" Background="#CCFFFFFF" Height="82" Width="89"/>
-        <TextBlock x:Name="playertext" HorizontalAlignment="Left" Margin="54,35,0,0" TextWrapping="Wrap" Text="---" VerticalAlignment="Top" FontSize="18.667" Foreground="White"/>
+        <TextBlock x:Name="playertext" HorizontalAlignment="Left" Margin="54,35,0,0" TextWrapping="Wrap" Text="---" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
         <Button x:Name="carbutton" Content="Car shop" HorizontalAlignment="Left" Margin="141,318,0,0" VerticalAlignment="Top" Click="carbutton_Click" Background="#CCFFFFFF"/>
         <Button x:Name="drivebutton" Content="DORAIVU" HorizontalAlignment="Left" Margin="1075,286,0,0" VerticalAlignment="Top" Height="52" Width="100" Background="#CCFFFFFF" Click="drivebutton_Click"/>
     </Grid>
