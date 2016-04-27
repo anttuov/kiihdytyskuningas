@@ -80,7 +80,8 @@ namespace Kiihdytyskuningas
             Canvas.SetLeft(this.background, -position);
             Canvas.SetLeft(this.carimg2, 40-(position - position2));
             rpm.Value = rpms;
-            debugtext.Text = "speed: " + speed + " rpms:" + rpms + " gear: " + gear + " position: "+position;
+            //debugtext.Text = "speed: " + speed + " rpms:" + rpms + " gear: " + gear + " position: "+position;
+            debugtext.Text = "";
 
             if (position > 6000)
             {
@@ -111,7 +112,7 @@ namespace Kiihdytyskuningas
         {
             player = (App.Current as App).player;
             accel = player.Car.PowerFunction();
-            accel2 = accel + 0.005;
+            accel2 = accel + 0.002;
             carimg.Source = new BitmapImage( new Uri("ms-appx:///"+player.Car.img, UriKind.Absolute));
             carimg2.Source = new BitmapImage(new Uri("ms-appx:///Assets/hachiroku.png", UriKind.Absolute));
 
