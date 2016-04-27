@@ -106,8 +106,11 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            player.InstallPart(chosencar);
-            player.money = player.money - chosencar.price;
+            if (player.money > chosencar.price)
+            {
+                player.InstallPart(chosencar);
+                player.money = player.money - chosencar.price;
+            }
         }
     }
 }

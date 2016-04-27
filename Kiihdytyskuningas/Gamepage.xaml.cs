@@ -80,8 +80,32 @@ namespace Kiihdytyskuningas
             Canvas.SetLeft(this.background, -position);
             Canvas.SetLeft(this.carimg2, 40-(position - position2));
             rpm.Value = rpms;
-            debugtext.Text = "speed: " + speed + " rpms:" + rpms + " gear: " + gear + " position: "+position ;
-            
+            debugtext.Text = "speed: " + speed + " rpms:" + rpms + " gear: " + gear + " position: "+position;
+
+            if (position > 6000)
+            {
+                player.money = player.money + 1000;
+                (App.Current as App).player = player;
+                Frame rootFrame = Window.Current.Content as Frame;
+                if (rootFrame == null) return;
+                if (rootFrame.CanGoBack)
+                {
+                    rootFrame.GoBack();
+                }
+            }
+
+            if (position2 > 6000)
+            {
+                player.money = player.money + 1000;
+                (App.Current as App).player = player;
+                Frame rootFrame = Window.Current.Content as Frame;
+                if (rootFrame == null) return;
+                if (rootFrame.CanGoBack)
+                {
+                    rootFrame.GoBack();
+                }
+            }
+
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -97,7 +121,9 @@ namespace Kiihdytyskuningas
         private void shift_Click(object sender, RoutedEventArgs e)
         {
             if(gear < player.Car.Gearbox.gears)
-            { 
+            {
+
+             
             double shiftvalue = Math.Abs((80 - rpms));
             if (shiftvalue < 2)
                 accel = accel + 0.02;

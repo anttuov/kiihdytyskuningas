@@ -17,7 +17,7 @@
             <ProgressBar x:Name="rpm" Height="50" Canvas.Left="500" Canvas.Top="50" Width="200" Value="0" Foreground="#FFFF4600"/>
             <ProgressBar x:Name="rpm_Copy" Height="50" Canvas.Left="500" Canvas.Top="50" Width="200" Value="80" Foreground="#7F0CFF02" Background="#7FFF0000"/>
             <Button x:Name="shift" Content="SHIFT UP" Canvas.Left="957" Canvas.Top="571" Height="139" Width="284" Click="shift_Click" Foreground="#FFDC28CC" FontSize="64" Background="#7F2406E0"/>
-            <TextBlock x:Name="debugtext" Canvas.Left="60" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="170"/>
+            <TextBlock x:Name="debugtext" Canvas.Left="60" TextWrapping="Wrap" Text="3" Canvas.Top="170" FontSize="18.667"/>
 
         </Canvas>
     </Grid>
