@@ -35,7 +35,6 @@ namespace Kiihdytyskuningas
 
             this.InitializeComponent();
 
-
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -69,7 +68,10 @@ namespace Kiihdytyskuningas
 
         private void drivebutton_Click(object sender, RoutedEventArgs e)
         {
+            if (player.Car.img != null)
+            { 
             this.Frame.Navigate(typeof(Gamepage));
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Kiihdytyskuningas
 
 
         }
-
+        // 3..2..1.. 
         private void Countdown_Tick(object sender, object e)
         {
             countdown = countdown - 1;
@@ -64,7 +64,7 @@ namespace Kiihdytyskuningas
             }
 
         }
-
+        //after countdown race is on
         private void Timer_Tick(object sender, object e)
         {
             if (rpms < 80)
@@ -86,6 +86,7 @@ namespace Kiihdytyskuningas
             if (position > 6000)
             {
                 player.money = player.money + 1000;
+                timer.Stop();
                 (App.Current as App).player = player;
                 Frame rootFrame = Window.Current.Content as Frame;
                 if (rootFrame == null) return;
@@ -97,7 +98,7 @@ namespace Kiihdytyskuningas
 
             if (position2 > 6000)
             {
-                player.money = player.money + 1000;
+                timer.Stop();
                 (App.Current as App).player = player;
                 Frame rootFrame = Window.Current.Content as Frame;
                 if (rootFrame == null) return;
@@ -108,19 +109,23 @@ namespace Kiihdytyskuningas
             }
 
         }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             player = (App.Current as App).player;
             accel = player.Car.PowerFunction();
             accel2 = accel + 0.002;
+            //load car images
             carimg.Source = new BitmapImage( new Uri("ms-appx:///"+player.Car.img, UriKind.Absolute));
             carimg2.Source = new BitmapImage(new Uri("ms-appx:///Assets/hachiroku.png", UriKind.Absolute));
 
 
         }
 
+
         private void shift_Click(object sender, RoutedEventArgs e)
         {
+            //very realistic shifting math
             if(gear < player.Car.Gearbox.gears)
             {
 

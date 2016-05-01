@@ -29,6 +29,7 @@ namespace Kiihdytyskuningas
             }
         }
 
+
         public void InstallPart(object part)
         {
             Type type = part.GetType();

@@ -28,6 +28,7 @@ namespace Kiihdytyskuningas
         public Carpage()
         {
             this.InitializeComponent();
+            //create data for all the cars
             List<Car> cars = new List<Car>();
             Car tmpcar = new Car { name = "Datsun 100A", price = 2000, weight = 600, img = "Assets/datsun100a.png" };
             tmpcar.SetMotor(new Motor { price = 0, power = 59, weight = 100, name = "Datsun 998cc 8v i4" });
@@ -77,7 +78,7 @@ namespace Kiihdytyskuningas
             tmpcar.SetWheel(new Wheel { price = 0, traction = 70, weight = 15, name = "RS-Watanabe + vakiokumet" });
             cars.Add(tmpcar);
 
-
+            //bind cardata to list
             CarListBox.ItemsSource = cars;
         }
 
@@ -106,7 +107,7 @@ namespace Kiihdytyskuningas
 
         private void buybutton_Click(object sender, RoutedEventArgs e)
         {
-            if (player.money > chosencar.price)
+            if (player.money >= chosencar.price)
             {
                 player.InstallPart(chosencar);
                 player.money = player.money - chosencar.price;

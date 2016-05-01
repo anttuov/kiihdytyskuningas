@@ -28,7 +28,7 @@ namespace Kiihdytyskuningas
 
             }
         }
-
+        //very mathematic function for speed calculations
         public double PowerFunction()
         {
             double power = ((motor.power / 300.0) * (wheel.traction / 100.0)) / ((weight+motor.weight+wheel.weight)/1000.0);
